@@ -1,3 +1,4 @@
 /windows-service/obj
 /windows-service/bin
 /windows-service/windows-service.csproj.user
+/.vs

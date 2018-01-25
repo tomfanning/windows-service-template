@@ -25,6 +25,14 @@ namespace windows_service
 
         protected override void OnStop()
         {
+            if (stopping) return;
+
+            stopping = true;
+
+            logger("Service stop requested");
+
+            // the process itself won't stop right away. Whatever is doing the work needs to monitor
+            // the stopping flag and gracefully exit (drop out of the DoSomething() method)
         }
 
         /// <summary>
